@@ -8,7 +8,7 @@ import java.awt.geom.*;
  * @version 2016.02.29
  */
 
-public class Circle
+public class Circle 
 {
     private int diameter;
     private int xPosition;

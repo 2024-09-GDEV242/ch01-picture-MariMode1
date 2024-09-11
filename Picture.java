@@ -4,17 +4,20 @@
  * can be changed. You can set it to black-and-white display and back to
  * colors (only after it's been drawn, of course).
  *
- * This class was written as an early example for teaching Java with BlueJ.
+ * This image represents a man in the ocean with a shark and a floaty on a sunny day.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
- */
+ * @author  Mari Modebadze
+ * @version 2024.09.09
+ */ 
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square sky;
+    private Square ocean;
     private Circle sun;
+    private Circle floaty;
+    private Circle inside;
+    private Person lifeguard;
+    private Triangle shark;
     private boolean drawn;
 
     /**
@@ -22,10 +25,13 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        sky = new Square();
+        ocean = new Square(); 
         sun = new Circle();
+        floaty = new Circle();
+        inside = new Circle();
+        lifeguard = new Person();
+        shark = new Triangle();
         drawn = false;
     }
 
@@ -35,27 +41,45 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+            sky.changeColor("skyblue");
+            sky.moveHorizontal(-340);
+            sky.moveVertical(-550);
+            sky.changeSize(550);
+            sky.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
+            ocean.changeColor("blue");
+            ocean.moveHorizontal(-320);
+            ocean.changeSize(550);
+            ocean.makeVisible();
     
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
+            
+            floaty.changeColor("red");
+            floaty.moveHorizontal(80);
+            floaty.moveVertical(60);
+            floaty.changeSize(80);
+            floaty.makeVisible();
+            
+            inside.changeColor("blue");
+            inside.moveHorizontal(100);
+            inside.moveVertical(80);
+            inside.changeSize(40);
+            inside.makeVisible();
+            
+            lifeguard.changeSize(80,40);
+            lifeguard.moveHorizontal(-94);
+            lifeguard.moveVertical(25);
+            lifeguard.makeVisible();
+            
+            shark.changeColor("black");
+            shark.moveHorizontal(15);
+            shark.moveVertical(130);
+            shark.changeSize(18, 50);
+            shark.makeVisible();
             drawn = true;
         }
     }
@@ -65,10 +89,13 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
+        sky.changeColor("black");
+        ocean.changeColor("black");
         sun.changeColor("black");
+        floaty.changeColor("white");
+        inside.changeColor("black");
+        lifeguard.changeColor("black");
+        shark.changeColor("white");
     }
 
     /**
@@ -76,9 +103,13 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        floaty.changeColor("red");
+        ocean.changeColor("blue");
         sun.changeColor("yellow");
+        inside.changeColor("blue");
+        sky.changeColor("white"); 
+        lifeguard.changeColor("black");
+        shark.changeColor("black");
     }
 }
+
